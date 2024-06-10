@@ -1,0 +1,21 @@
+front <- 5
+back <- 2
+total_sum <- 1000
+coef <- 1.5
+# front_tip <- coef * back_tip
+# front_tip * front + back_tip * back <- total_sum
+# coef * back_tip * front + back_tip * back <- total_sum
+# back_tip * (coef * front + back) <- total_sum
+# back_tip <- total_sum / (coef * front + back)
+get_sum <- function(front, back, total_sum, coef) {
+  back_tip <- total_sum / (coef * front + back)
+  front_tip <- coef * back_tip
+  return(
+    list(
+      back_tip = back_tip,
+      front_tip = front_tip
+    )
+  )
+}
+
+get_sum(front, back, total_sum, coef)
